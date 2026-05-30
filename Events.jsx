@@ -44,7 +44,7 @@ export default function Events() {
         <div className={styles.grid}>
           <EventCard
             number="Event One"
-            name="Garden Celebration"
+            name="Indian Sagai Ceremony and Lunch"
             delay="0s"
             details={[
               { icon: '📅', strong: 'Saturday, 15th August 2026', text: '12:00 noon — approx. 3–4 hours' },
@@ -54,11 +54,11 @@ export default function Events() {
           />
           <EventCard
             number="Event Two"
-            name="Evening Soirée"
+            name="Evening Engagement Party"
             delay="0.15s"
             details={[
               { icon: '📅', strong: 'Date to be confirmed', text: 'Evening celebration' },
-              { icon: '📍', strong: 'Central London', text: 'Venue to be announced', tbc: true },
+              { icon: '📍', strong:s 'Central London', text: 'Venue to be announced', tbc: true },
               { icon: '👗', strong: '', text: 'Formal — black tie / Indian wear welcome' },
             ]}
           />
