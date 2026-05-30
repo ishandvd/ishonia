@@ -44,7 +44,7 @@ export default function Events() {
         <div className={styles.grid}>
           <EventCard
             number="Event One"
-            name="Indian Sagai Ceremony and Lunch"
+            name="Indian Sagai and Lunch"
             delay="0s"
             details={[
               { icon: '📅', strong: 'Saturday, 15th August 2026', text: '12:00 noon — approx. 3–4 hours' },
