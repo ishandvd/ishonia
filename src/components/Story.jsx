@@ -1,5 +1,6 @@
 import useReveal from './useReveal'
 import styles from './Story.module.css'
+import storyImage from '../assets/our-story.jpg'
 
 export default function Story() {
   const ref = useReveal()
@@ -7,10 +8,7 @@ export default function Story() {
   return (
     <section className={styles.story}>
       <div className={`${styles.inner} reveal`} ref={ref}>
-        <div className={styles.imagePlaceholder}>
-          <span className={styles.icon}>💍</span>
-          <p>Your photo here</p>
-        </div>
+        <img src={storyImage} alt="Sonia and Ishan" className={styles.image} />
 
         <div className={styles.text}>
           <span className={styles.label}>✦ &nbsp; Our Story</span>

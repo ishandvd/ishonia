@@ -28,6 +28,13 @@
   letter-spacing: 0.1em;
 }
 
+.image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid rgba(200, 169, 110, 0.18);
+}
+
 .icon { font-size: 2.5rem; }
 
 .text {
@@ -79,6 +86,9 @@
     gap: 2.5rem;
   }
   .imagePlaceholder {
+    aspect-ratio: 16 / 9;
+  }
+  .image {
     aspect-ratio: 16 / 9;
   }
 }
