@@ -47,19 +47,19 @@ export default function Events() {
             name="Indian Sagai and Lunch"
             delay="0s"
             details={[
-              { icon: '📅', strong: 'Saturday, 15th August 2026', text: ' · 12:00 noon — approx. 3–4 hours' },
+              { icon: '📅', strong: 'Saturday, 15th August 2026', text: ' · 11.30am - 3pm' },
               { icon: '📍', strong: 'West Middlesex Golf Club', text: ' · Greenford Road, Hanwell, London' },
-              { icon: '👗', strong: 'Smart casual', text: ' — garden party attire' },
+              { icon: '👗', strong: 'Indian Attire', text: ' — Traditional Indian or Formal Western Attire Welcome' },
             ]}
           />
           <EventCard
             number="Event Two"
-            name="Evening Engagement Party"
+            name="Evening Engagement Drinks Party"
             delay="0.15s"
             details={[
-              { icon: '📅', strong: 'Date to be confirmed', text: ' · Evening celebration', tbc: true },
+              { icon: '📅', strong: 'Saturday, 15th August 2026', text: ' · Evening celebration 7pm - 12am', tbc: true },
               { icon: '📍', strong: 'Central London', text: ' · Venue to be announced', tbc: true },
-              { icon: '👗', strong: 'Formal', text: ' — black tie / Indian wear welcome' },
+              { icon: '👗', strong: 'Formal', text: ' — black tie' },
             ]}
           />
         </div>
