@@ -73,3 +73,77 @@
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
+
+.noCode {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.stepperNote {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.counterBtn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counterBtn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.counterVal {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.back {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--gold);
+}
