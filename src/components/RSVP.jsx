@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import useReveal from './useReveal'
+import useGuest from './useGuest'
 import styles from './RSVP.module.css'
-import { GUEST_CODES } from '../guestCodes'
 
 const TALLY_FORM_ID = 'ODkdqa'
 
 export default function RSVP() {
   const ref = useReveal()
-  const [guest, setGuest] = useState(null)
-  const [ready, setReady] = useState(false)
+  const { guest, ready } = useGuest()
   const [step, setStep] = useState('button')
   const [count, setCount] = useState(1)
-
-  useEffect(() => {
-    const code = new URLSearchParams(window.location.search).get('code')
-    if (code && GUEST_CODES[code]) {
-      setGuest(GUEST_CODES[code])
-    }
-    setReady(true)
-  }, [])
 
   function openTally(numberOfGuests) {
     window.Tally?.openPopup(TALLY_FORM_ID, {
