@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import StarCanvas from './components/StarCanvas'
 import MagicDust from './components/MagicDust'
 import FloatingSparkles from './components/FloatingSparkles'
@@ -10,6 +11,12 @@ import useGuest from './components/useGuest'
 
 export default function App() {
   const { guest, ready } = useGuest()
+
+  useEffect(() => {
+    if (!ready || !guest) return
+    const el = document.getElementById('rsvp')
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }, [ready, guest])
 
   if (!ready) return <StarCanvas />
 

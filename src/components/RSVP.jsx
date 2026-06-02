@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import useReveal from './useReveal'
+import { useState, useRef } from 'react'
 import useGuest from './useGuest'
 import styles from './RSVP.module.css'
 
@@ -29,7 +28,7 @@ function RadioGroup({ name, options, value, onChange }) {
 }
 
 export default function RSVP() {
-  const ref = useReveal()
+  const ref = useRef(null)
   const { guest, ready } = useGuest()
 
   const [fields, setFields] = useState({
@@ -76,8 +75,8 @@ export default function RSVP() {
 
   if (status === 'success') {
     return (
-      <section className={styles.rsvp}>
-        <div className={`${styles.inner} reveal`} ref={ref}>
+      <section id="rsvp" className={styles.rsvp}>
+        <div className={styles.inner} ref={ref}>
           <span className={styles.label}>✦ &nbsp; Your Response</span>
           <div className={styles.goldLine} />
           <h2 className={styles.title}>Thank you</h2>
@@ -90,8 +89,8 @@ export default function RSVP() {
   }
 
   return (
-    <section className={styles.rsvp}>
-      <div className={`${styles.inner} reveal`} ref={ref}>
+    <section id="rsvp" className={styles.rsvp}>
+      <div className={styles.inner} ref={ref}>
         <span className={styles.label}>✦ &nbsp; Your Response</span>
         <div className={styles.goldLine} />
         <h2 className={styles.title}>Will you join us?</h2>
