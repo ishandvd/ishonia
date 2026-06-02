@@ -154,3 +154,117 @@
 .back:hover {
   color: var(--gold);
 }
+
+/* ── Custom form ── */
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.question {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioLabel {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(200, 169, 110, 0.35);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.radioLabel:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.radioSelected {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200, 169, 110, 0.08);
+}
+
+.textInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.textInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.textInput:focus {
+  border-bottom-color: var(--gold);
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.textarea:focus {
+  border-bottom-color: var(--gold);
+}
+
+.errorMsg {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #c87070;
+  text-align: center;
+}

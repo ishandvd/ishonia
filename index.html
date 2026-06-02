@@ -10,6 +10,17 @@
     <script async src="https://tally.so/widgets/embed.js"></script>
   </head>
   <body>
+    <!-- Hidden form for Netlify Forms detection at build time -->
+    <form name="rsvp" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="invite_type" />
+      <input type="hidden" name="number_of_guests" />
+      <input type="hidden" name="full_name" />
+      <input name="coming_to_sagai" />
+      <input name="dietary_restrictions" />
+      <input name="coming_to_evening" />
+      <input name="is_drinking_alcohol" />
+      <textarea name="anything_else"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
