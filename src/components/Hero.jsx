@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import CornerOrnaments from './CornerOrnaments'
 import styles from './Hero.module.css'
 
-export default function Hero() {
+export default function Hero({ guestName }) {
   const [ready, setReady] = useState(false)
   useEffect(() => { setTimeout(() => setReady(true), 50) }, [])
 
@@ -13,6 +13,12 @@ export default function Hero() {
       <div className={styles.glow} aria-hidden />
 
       <div className={styles.inner}>
+        {guestName && (
+          <p className={`${styles.welcome} ${ready ? styles.visible : ''}`}>
+            Welcome, {guestName}
+          </p>
+        )}
+
         <p className={`${styles.tag} ${ready ? styles.visible : ''}`}>
           ✦ &nbsp; A Story Begins &nbsp; ✦
         </p>

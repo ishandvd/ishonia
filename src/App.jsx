@@ -54,7 +54,7 @@ export default function App() {
       <StarCanvas />
       <MagicDust />
       <FloatingSparkles />
-      <Hero />
+      <Hero guestName={guest.full_name} />
       <Story />
       <Events />
       <RSVP />

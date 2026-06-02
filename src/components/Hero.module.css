@@ -27,6 +27,17 @@
   gap: 1.5rem;
 }
 
+.welcome {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.2s ease 0s, transform 1.2s ease 0s;
+}
+
 .tag {
   font-family: var(--font-sans);
   font-size: 0.72rem;

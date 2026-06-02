@@ -14,6 +14,14 @@
   gap: 0rem;
 }
 
+.welcome {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
 .label {
   font-family: var(--font-sans);
   font-size: 0.68rem;
@@ -180,6 +188,13 @@
   color: var(--gold);
 }
 
+.maxNote {
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: none;
+  opacity: 0.7;
+}
+
 .radioGroup {
   display: flex;
   gap: 1rem;
@@ -267,4 +282,118 @@
   letter-spacing: 0.1em;
   color: #c87070;
   text-align: center;
+}
+
+/* ── Initial yes/no ── */
+
+.yesNo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btnYes {
+  width: 100%;
+  max-width: 320px;
+  padding: 1.1rem 2rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btnYes:hover {
+  background: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 0 24px rgba(200, 169, 110, 0.35);
+}
+
+.btnNo {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.btnNo:hover {
+  color: var(--text);
+}
+
+/* ── No confirmation ── */
+
+.eventList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eventItem {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.confirmBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.btnDecline {
+  width: 100%;
+  max-width: 320px;
+  padding: 1.1rem 2rem;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btnDecline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btnGhost {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.btnGhost:hover {
+  color: var(--gold);
 }
