@@ -2,7 +2,7 @@
   position: relative;
   z-index: 2;
   padding: 7rem 2rem;
-  background: rgba(200, 169, 110, 0.025);
+  background: rgba(106, 158, 106, 0.04);
 }
 
 .inner {
@@ -16,7 +16,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--pink-deep);
 }
 
 .goldLine {
@@ -61,15 +61,17 @@
 
 .card {
   padding: 2.5rem;
-  border: 1px solid rgba(200, 169, 110, 0.18);
-  background: rgba(200, 169, 110, 0.03);
+  border: 1px solid rgba(184, 134, 42, 0.18);
+  background: rgba(253, 250, 246, 0.8);
   transition: border-color 0.35s, background 0.35s, transform 0.35s;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
 }
 
 .card:hover {
-  border-color: rgba(200, 169, 110, 0.45);
-  background: rgba(200, 169, 110, 0.07);
+  border-color: rgba(184, 134, 42, 0.45);
+  background: #ffffff;
   transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
 
 .number {
@@ -77,7 +79,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--pink-deep);
   display: block;
   margin-bottom: 0.75rem;
 }

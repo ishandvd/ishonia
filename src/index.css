@@ -5,12 +5,17 @@
 }
 
 :root {
-  --bg: #080510;
-  --gold: #c8a96e;
-  --gold-light: #e2c992;
-  --gold-dark: #9a7a4a;
-  --text: #f5f0e8;
-  --text-muted: rgba(245, 240, 232, 0.65);
+  --bg: #fdfaf6;
+  --bg2: #faf5f0;
+  --gold: #b8862a;
+  --gold-light: #d4a840;
+  --gold-dark: #8a6010;
+  --pink: #e8a0b4;
+  --pink-deep: #c96880;
+  --green: #6a9e6a;
+  --green-light: #8ec08e;
+  --text: #2a1f14;
+  --text-muted: rgba(42, 31, 20, 0.6);
   --font-display: 'Cinzel Decorative', serif;
   --font-body: 'Cormorant Garamond', serif;
   --font-sans: 'Lato', sans-serif;

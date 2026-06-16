@@ -3,6 +3,7 @@
   z-index: 2;
   padding: 8rem 2rem;
   text-align: center;
+  background: rgba(232, 160, 180, 0.05);
 }
 
 .inner {
@@ -14,20 +15,12 @@
   gap: 0rem;
 }
 
-.welcome {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  color: var(--gold);
-  font-weight: 400;
-  margin-bottom: 2rem;
-}
-
 .label {
   font-family: var(--font-sans);
   font-size: 0.68rem;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--pink-deep);
 }
 
 .goldLine {
@@ -70,8 +63,8 @@
 
 .btn:hover {
   background: var(--gold);
-  color: var(--bg);
-  box-shadow: 0 0 24px rgba(200, 169, 110, 0.35);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(184, 134, 42, 0.25);
 }
 
 .deadline {
@@ -81,89 +74,6 @@
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
-
-.frame {
-  border: none;
-  width: 100%;
-  min-height: 600px;
-  margin-top: 1rem;
-}
-
-.noCode {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.stepper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.stepperNote {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  text-align: center;
-}
-
-.counter {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.counterBtn {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--gold);
-  background: transparent;
-  color: var(--gold);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.counterBtn:hover {
-  background: var(--gold);
-  color: var(--bg);
-}
-
-.counterVal {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--text);
-  min-width: 2rem;
-  text-align: center;
-}
-
-.back {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  padding: 0;
-  transition: color 0.2s;
-}
-
-.back:hover {
-  color: var(--gold);
-}
-
-/* ── Custom form ── */
 
 .form {
   width: 100%;
@@ -207,7 +117,7 @@
 .radioLabel {
   flex: 1;
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(200, 169, 110, 0.35);
+  border: 1px solid rgba(184, 134, 42, 0.35);
   color: var(--text-muted);
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -226,14 +136,14 @@
 .radioSelected {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(200, 169, 110, 0.08);
+  background: rgba(184, 134, 42, 0.06);
 }
 
 .textInput {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  border-bottom: 1px solid rgba(184, 134, 42, 0.35);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -243,20 +153,14 @@
   box-sizing: border-box;
 }
 
-.textInput::placeholder {
-  color: var(--text-muted);
-  opacity: 0.6;
-}
-
-.textInput:focus {
-  border-bottom-color: var(--gold);
-}
+.textInput::placeholder { color: var(--text-muted); opacity: 0.6; }
+.textInput:focus { border-bottom-color: var(--gold); }
 
 .textarea {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  border-bottom: 1px solid rgba(184, 134, 42, 0.35);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -267,24 +171,49 @@
   box-sizing: border-box;
 }
 
-.textarea::placeholder {
-  color: var(--text-muted);
-  opacity: 0.6;
-}
-
-.textarea:focus {
-  border-bottom-color: var(--gold);
-}
+.textarea::placeholder { color: var(--text-muted); opacity: 0.6; }
+.textarea:focus { border-bottom-color: var(--gold); }
 
 .errorMsg {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
-  color: #c87070;
+  color: #c85050;
   text-align: center;
 }
 
-/* ── Initial yes/no ── */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.counterBtn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counterBtn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+.counterVal {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text);
+  min-width: 2rem;
+  text-align: center;
+}
 
 .yesNo {
   display: flex;
@@ -312,8 +241,8 @@
 
 .btnYes:hover {
   background: var(--gold);
-  color: var(--bg);
-  box-shadow: 0 0 24px rgba(200, 169, 110, 0.35);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(184, 134, 42, 0.25);
 }
 
 .btnNo {
@@ -330,11 +259,7 @@
   text-underline-offset: 4px;
 }
 
-.btnNo:hover {
-  color: var(--text);
-}
-
-/* ── No confirmation ── */
+.btnNo:hover { color: var(--text); }
 
 .eventList {
   list-style: none;
@@ -364,7 +289,7 @@
   width: 100%;
   max-width: 320px;
   padding: 1.1rem 2rem;
-  border: 1px solid rgba(200, 169, 110, 0.4);
+  border: 1px solid rgba(184, 134, 42, 0.4);
   background: transparent;
   color: var(--text-muted);
   font-family: var(--font-sans);
@@ -394,6 +319,4 @@
   text-underline-offset: 4px;
 }
 
-.btnGhost:hover {
-  color: var(--gold);
-}
+.btnGhost:hover { color: var(--gold); }

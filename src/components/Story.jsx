@@ -1,6 +1,9 @@
 import useReveal from './useReveal'
 import styles from './Story.module.css'
 import storyImage from '../assets/our-story.jpg'
+import content from '../content.yml'
+
+const c = content.story
 
 export default function Story() {
   const ref = useReveal()
@@ -8,26 +11,18 @@ export default function Story() {
   return (
     <section className={styles.story}>
       <div className={`${styles.inner} reveal`} ref={ref}>
-        <img src={storyImage} alt="Sonia and Ishan" className={styles.image} />
+        <img src={storyImage} alt={c.image_alt} className={styles.image} />
 
         <div className={styles.text}>
-          <span className={styles.label}>✦ &nbsp; Our Story</span>
+          <span className={styles.label}>{c.label}</span>
           <div className={styles.goldLine} />
-          <h2 className={styles.title}>A love written in the stars</h2>
+          <h2 className={styles.title}>{c.title}</h2>
           <div className={styles.body}>
-            <p>
-              After years of laughter, adventure, and building something beautiful together —
-              Ishan popped the question, and Sonia said yes.
-            </p>
+            <p>{c.paragraph1}</p>
             <br />
-            <p>
-              We are so excited to celebrate this moment with the people who mean the most to us.
-              There will be food, dancing, and plenty of magic — and we cannot wait to share it all with you.
-            </p>
+            <p>{c.paragraph2}</p>
             <br />
-            <p className={styles.quote}>
-              "And they lived happily ever after… but first, let's celebrate."
-            </p>
+            <p className={styles.quote}>{c.quote}</p>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@
 .glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(200, 169, 110, 0.07) 0%, transparent 68%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(232, 160, 180, 0.08) 0%, transparent 68%);
   pointer-events: none;
 }
 
@@ -25,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  padding-bottom: 6rem;
 }
 
 .welcome {
@@ -43,7 +44,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--pink-deep);
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 1.2s ease 0.2s, transform 1.2s ease 0.2s;
@@ -93,7 +94,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--green);
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 1.2s ease 1.2s, transform 1.2s ease 1.2s;
@@ -111,7 +112,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: var(--gold);
+  color: var(--pink-deep);
   font-family: var(--font-sans);
   font-size: 0.62rem;
   letter-spacing: 0.28em;
@@ -123,10 +124,36 @@
 .scrollArrow {
   width: 1px;
   height: 36px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
+  background: linear-gradient(to bottom, var(--pink-deep), transparent);
 }
 
 @keyframes scrollBounce {
   0%, 100% { opacity: 0.4; transform: translateY(0); }
   50% { opacity: 0.9; transform: translateY(6px); }
+}
+
+/* ── Mute toggle (fixed, bottom-right) ── */
+.muteBtn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  background: rgba(253, 250, 246, 0.85);
+  border: 1px solid rgba(184, 134, 42, 0.35);
+  color: var(--gold);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.3s, background 0.3s;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.muteBtn:hover {
+  border-color: var(--gold);
+  background: rgba(184, 134, 42, 0.08);
 }

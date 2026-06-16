@@ -1,0 +1,201 @@
+# ============================================================
+#  content.yml  —  All user-facing text for the Ishan & Sonia
+#                  engagement website, in one place.
+#
+#  After editing, the components need to import and use these
+#  values (they don't auto-read this file yet — it's a draft
+#  for you to review and confirm before wiring up).
+# ============================================================
+
+
+# ------------------------------------------------------------
+# HERO SECTION  (the very first full-screen panel visitors see)
+# ------------------------------------------------------------
+hero:
+  # Small tag line above the names
+  tagline: "✦   A Story Begins   ✦"
+
+  # The two names displayed large in the centre
+  name1: "Ishan"
+  name2: "Sonia"
+
+  # One-liner below the names
+  subtitle: "are overjoyed to share their engagement"
+
+  # Small line below the gold divider
+  celebrations_hint: "✦   A celebrations await   ✦"
+
+  # Text shown next to the down-arrow at the bottom of the hero
+  scroll_hint: "Scroll"
+
+  # Greeting shown at the very top when a guest is logged in
+  # The guest's name is appended automatically: "Welcome, Priya"
+  welcome_prefix: "Welcome,"
+
+
+# ------------------------------------------------------------
+# STORY SECTION  (photo + text block)
+# ------------------------------------------------------------
+story:
+  # Small label above the gold line
+  label: "✦   Our Story"
+
+  # Main heading
+  title: "From Sixth Form to Forever"
+
+  # Three paragraphs of body copy (rendered in order)
+  paragraph1: >
+    After almost 7 years of laughter, travel, and long distance -
+    Ishan popped the question, and Sonia said yes.
+
+  paragraph2: >
+    We are so excited to celebrate this moment with the people who mean the most to us.
+    There will be fun, so much love, and plenty of magic — and we cannot wait to share it all with you.
+
+  # Pull-quote shown in italics at the bottom of the body
+  quote: "\"And so the next chapter begins… but first, let's celebrate.\""
+
+  # Alt text for the photo (accessibility / SEO)
+  image_alt: "Sonia and Ishan"
+
+
+# ------------------------------------------------------------
+# EVENTS SECTION  (the two event cards)
+# ------------------------------------------------------------
+events:
+  # Small label above the gold line
+  label: "✦   Save the Dates.  ✦"
+
+  # Main heading
+  title: "The Celebrations"
+
+  # Intro paragraph shown only when a guest is invited to BOTH events
+  both_intro: >
+    We have two magical celebrations planned — and you're invited to both.
+    We cannot wait to share every moment with you.
+
+  # ── Event 1 ──────────────────────────────────────────────
+  event1:
+    # Badge text in the top-left corner of the card  (e.g. "Event One")
+    number: "Day"
+
+    # Card heading
+    name: "Indian Sagai and Lunch"
+
+    # Detail rows — each has an emoji icon, bold text, and regular text
+    date:
+      icon: "📅"
+      strong: "Saturday, 15th August 2026"
+      text: " · 11.00am - 3.00pm"
+
+    location:
+      icon: "📍"
+      strong: "West Middlesex Golf Club"
+      text: " · Greenford Road, Hanwell, UB1 3EE, London"
+      lat: 51.513169064451944
+      lng: -0.3542281739227068
+
+    dress_code:
+      icon: "👗"
+      strong: "Traditional or Formal Attire"
+      text: " — Dress to impress in your finest Indian wear or Western formals"
+
+  # ── Event 2 ──────────────────────────────────────────────
+  event2:
+    number: "Evening"
+    name: "Evening Engagement Drinks Party"
+
+    date:
+      icon: "📅"
+      strong: "Saturday, 15th August 2026"
+      text: " · Evening celebration 7.30pm - 2.00am"
+      tbc: false          # if true, a "TBC" badge is shown next to this row
+
+    location:
+      icon: "📍"
+      strong: "Circe's Rooftop, Waterloo"
+      text: " · Mercury House, 117 Waterloo Rd, London SE1 8UL"
+      tbc: false
+      lat: 51.50270548157586
+      lng: -0.11023851675165067
+
+    dress_code:
+      icon: "👗"
+      strong: "Smart Casual"
+      text: " — Think summer dresses, shirts, and your best cocktail vibes"
+
+
+# ------------------------------------------------------------
+# RSVP SECTION  (multi-step form)
+# ------------------------------------------------------------
+rsvp:
+  # Small label above the gold line (same style as other sections)
+  label: "✦   Your Response"
+
+  # ── Step: initial (yes / no question) ────────────────────
+  initial:
+    title: "Will you join us?"
+    note: "Please let us know if you'll be celebrating with us —\nit means the world to have you there."
+    btn_yes: "✦   Yes, I'll be there"
+    btn_no: "I can't make it"
+
+  # ── Step: no_confirm (shown when guest clicks "I can't make it") ──
+  decline_confirm:
+    title: "Are you sure?"
+    note_before: "You're confirming that you won't be able to join us for:"
+    note_after: "We'd love to have you there if you can make it."
+    btn_confirm: "Confirm I can't attend"
+    btn_back: "Go back"
+
+  # ── Step: form (attendance + dietary details) ─────────────
+  form:
+    title: "Wonderful!"
+    note: "Just a few details so we can make sure everything is perfect for you."
+
+    # Question for Sagai headcount  — "{max}" is replaced with the guest's max party size
+    question_sagai_count: "How many from your party will be attending the Sagai?"
+
+    # Question for Evening headcount
+    question_evening_count: "How many from your party will be attending the Evening?"
+
+    # Dietary requirements question (shown for Sagai guests)
+    question_dietary: "Any dietary requirements?"
+    dietary_placeholder: "e.g. vegetarian, gluten-free, none"
+
+    # Alcohol question (shown for Evening guests)
+    question_alcohol: "How many in your party will be drinking alcohol at the evening event?"
+
+    # Free-text field at the end
+    question_other: "Anything else you'd like us to know?"
+    other_placeholder: "Optional"
+
+    # Submit button labels
+    btn_submit: "✦   Send RSVP   ✦"
+    btn_submitting: "Sending…"
+
+    # Error shown if the network request fails
+    error: "Something went wrong — please try again."
+
+  # ── Step: success (after form submitted) ──────────────────
+  success:
+    title: "Thank you"
+    note: "Thank you for submitting your RSVP."
+
+  # ── Shared ────────────────────────────────────────────────
+  # Deadline line shown on the initial and form steps
+  deadline: "Kindly respond by 1st July 2026"
+
+  # Display names used in the decline-confirm bullet list
+  # Keyed by inviteType value in guestCodes.js
+  event_display_names:
+    event_1: ["the Sagai and Lunch"]
+    event_2: ["the Evening Celebration"]
+    both:    ["the Sagai and Lunch", "the Evening Celebration"]
+
+
+# ------------------------------------------------------------
+# FOOTER
+# ------------------------------------------------------------
+footer:
+  names: "Ishan & Sonia"
+  copy: "With love ✦ 2026"

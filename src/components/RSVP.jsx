@@ -1,17 +1,10 @@
 import { useState, useRef } from 'react'
 import useGuest from './useGuest'
 import styles from './RSVP.module.css'
+import content from '../content.yml'
 
-const YES_NO = [
-  { value: 'yes', label: 'Yes' },
-  { value: 'no',  label: 'No'  },
-]
-
-const EVENT_NAMES = {
-  event_1: ['the Sagai'],
-  event_2: ['the Evening'],
-  both:    ['the Sagai', 'the Evening'],
-}
+const c = content.rsvp
+const EVENT_NAMES = c.event_display_names
 
 function RadioGroup({ name, options, value, onChange }) {
   return (
@@ -126,7 +119,7 @@ export default function RSVP() {
 
   const header = (
     <>
-      <span className={styles.label}>✦ &nbsp; Your Response</span>
+      <span className={styles.label}>{c.label}</span>
       <div className={styles.goldLine} />
     </>
   )
@@ -136,10 +129,8 @@ export default function RSVP() {
       <section id="rsvp" className={styles.rsvp}>
         <div className={styles.inner} ref={ref}>
           {header}
-          <h2 className={styles.title}>Thank you</h2>
-          <p className={styles.note}>
-            Thank you for submitting your RSVP.
-          </p>
+          <h2 className={styles.title}>{c.success.title}</h2>
+          <p className={styles.note}>{c.success.note}</p>
         </div>
       </section>
     )
@@ -150,20 +141,18 @@ export default function RSVP() {
       <section id="rsvp" className={styles.rsvp}>
         <div className={styles.inner} ref={ref}>
           {header}
-          <h2 className={styles.title}>Are you sure?</h2>
-          <p className={styles.note}>
-            You're confirming that you won't be able to join us for:
-          </p>
+          <h2 className={styles.title}>{c.decline_confirm.title}</h2>
+          <p className={styles.note}>{c.decline_confirm.note_before}</p>
           <ul className={styles.eventList}>
             {events.map(e => <li key={e} className={styles.eventItem}>{e}</li>)}
           </ul>
-          <p className={styles.note}>We'd love to have you there if you can make it.</p>
+          <p className={styles.note}>{c.decline_confirm.note_after}</p>
           <div className={styles.confirmBtns}>
             <button className={styles.btnDecline} onClick={handleDeclineConfirm} type="button">
-              Confirm I can't attend
+              {c.decline_confirm.btn_confirm}
             </button>
             <button className={styles.btnGhost} onClick={() => setStep('initial')} type="button">
-              Go back
+              {c.decline_confirm.btn_back}
             </button>
           </div>
         </div>
@@ -176,16 +165,14 @@ export default function RSVP() {
       <section id="rsvp" className={styles.rsvp}>
         <div className={styles.inner} ref={ref}>
           {header}
-          <h2 className={styles.title}>Wonderful!</h2>
-          <p className={styles.note}>
-            Just a few details so we can make sure everything is perfect for you.
-          </p>
+          <h2 className={styles.title}>{c.form.title}</h2>
+          <p className={styles.note}>{c.form.note}</p>
 
           <form className={styles.form} onSubmit={handleFormSubmit}>
             {showSagai && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  How many from your party will be attending the Sagai?
+                  {c.form.question_sagai_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
@@ -199,7 +186,7 @@ export default function RSVP() {
             {showEvening && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  How many from your party will be attending the Evening?
+                  {c.form.question_evening_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
@@ -212,11 +199,11 @@ export default function RSVP() {
 
             {showSagai && (
               <div className={styles.field}>
-                <p className={styles.question}>Any dietary requirements?</p>
+                <p className={styles.question}>{c.form.question_dietary}</p>
                 <input
                   type="text"
                   className={styles.textInput}
-                  placeholder="e.g. vegetarian, gluten-free, none"
+                  placeholder={c.form.dietary_placeholder}
                   value={fields.dietary_restrictions}
                   onChange={e => set('dietary_restrictions', e.target.value)}
                 />
@@ -226,7 +213,7 @@ export default function RSVP() {
             {showEvening && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  How many in your party will be drinking alcohol at the evening event?
+                  {c.form.question_alcohol}
                   <span className={styles.maxNote}> (max {alcoholMax})</span>
                 </p>
                 <Stepper
@@ -238,10 +225,10 @@ export default function RSVP() {
             )}
 
             <div className={styles.field}>
-              <p className={styles.question}>Anything else you'd like us to know?</p>
+              <p className={styles.question}>{c.form.question_other}</p>
               <textarea
                 className={styles.textarea}
-                placeholder="Optional"
+                placeholder={c.form.other_placeholder}
                 rows={3}
                 value={fields.anything_else}
                 onChange={e => set('anything_else', e.target.value)}
@@ -249,15 +236,15 @@ export default function RSVP() {
             </div>
 
             {step === 'error' && (
-              <p className={styles.errorMsg}>Something went wrong — please try again.</p>
+              <p className={styles.errorMsg}>{c.form.error}</p>
             )}
 
             <button type="submit" className={styles.btn} disabled={step === 'submitting'}>
-              {step === 'submitting' ? 'Sending…' : '✦   Send RSVP   ✦'}
+              {step === 'submitting' ? c.form.btn_submitting : c.form.btn_submit}
             </button>
           </form>
 
-          <p className={styles.deadline}>Kindly respond by 1st August 2026</p>
+          <p className={styles.deadline}>{c.deadline}</p>
         </div>
       </section>
     )
@@ -268,20 +255,21 @@ export default function RSVP() {
     <section id="rsvp" className={styles.rsvp}>
       <div className={styles.inner} ref={ref}>
         {header}
-        <h2 className={styles.title}>Will you join us?</h2>
+        <h2 className={styles.title}>{c.initial.title}</h2>
         <p className={styles.note}>
-          Please let us know if you'll be celebrating with us —<br />
-          it means the world to have you there.
+          {c.initial.note.split('\n').map((line, i, arr) => (
+            <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+          ))}
         </p>
         <div className={styles.yesNo}>
           <button className={styles.btnYes} onClick={() => setStep('form')} type="button">
-            ✦ &nbsp; Yes, I'll be there
+            {c.initial.btn_yes}
           </button>
           <button className={styles.btnNo} onClick={() => setStep('no_confirm')} type="button">
-            I can't make it
+            {c.initial.btn_no}
           </button>
         </div>
-        <p className={styles.deadline}>Kindly respond by 1st August 2026</p>
+        <p className={styles.deadline}>{c.deadline}</p>
       </div>
     </section>
   )

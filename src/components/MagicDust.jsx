@@ -37,7 +37,9 @@ export default function MagicDust() {
         if (p.life <= 0) { particles.splice(i, 1); continue }
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(200, 169, 110, ${p.life * 0.85})`
+        const colors = ['232,160,180', '122,184,122', '200,169,110']
+        const c = colors[Math.floor(p.r) % colors.length]
+        ctx.fillStyle = `rgba(${c}, ${p.life * 0.7})`
         ctx.fill()
       }
       raf = requestAnimationFrame(loop)

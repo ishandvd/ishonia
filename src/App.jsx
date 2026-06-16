@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import StarCanvas from './components/StarCanvas'
 import MagicDust from './components/MagicDust'
 import FloatingSparkles from './components/FloatingSparkles'
@@ -7,16 +7,30 @@ import Story from './components/Story'
 import Events from './components/Events'
 import RSVP from './components/RSVP'
 import Footer from './components/Footer'
+import EnvelopeIntro from './components/EnvelopeIntro'
 import useGuest from './components/useGuest'
+import music from './assets/music.mp3'
 
 export default function App() {
   const { guest, ready } = useGuest()
+  const [entered, setEntered] = useState(false)
+  const [muted, setMuted] = useState(false)
+  const audioRef = useRef(null)
 
-  useEffect(() => {
-    if (!ready || !guest) return
-    const el = document.getElementById('rsvp')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }, [ready, guest])
+
+  function handleEnter() {
+    setEntered(true)
+    const audio = audioRef.current
+    audio.loop = true
+    audio.volume = 0.5
+    audio.play()
+  }
+
+  function toggleMute() {
+    const audio = audioRef.current
+    audio.muted = !audio.muted
+    setMuted(audio.muted)
+  }
 
   if (!ready) return <StarCanvas />
 
@@ -51,6 +65,32 @@ export default function App() {
 
   return (
     <>
+      <audio ref={audioRef} src={music} preload="auto" />
+
+      {/* Envelope sits at the very root — nothing can paint over it */}
+      {!entered && <EnvelopeIntro onOpen={handleEnter} />}
+
+      {entered && (
+        <button
+          onClick={toggleMute}
+          aria-label={muted ? 'Unmute music' : 'Mute music'}
+          style={{
+            position: 'fixed', bottom: '1.5rem', right: '1.5rem',
+            zIndex: 50,
+            background: 'rgba(253,250,246,0.85)',
+            border: '1px solid rgba(184,134,42,0.35)',
+            color: 'var(--gold)',
+            width: '2.5rem', height: '2.5rem',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', fontSize: '1rem',
+            backdropFilter: 'blur(4px)',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+          }}
+        >
+          {muted ? '🔇' : '🎵'}
+        </button>
+      )}
+
       <StarCanvas />
       <MagicDust />
       <FloatingSparkles />

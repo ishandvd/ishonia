@@ -1,10 +1,11 @@
-const SPARKLES = Array.from({ length: 24 }, (_, i) => ({
+const SPARKLES = Array.from({ length: 18 }, (_, i) => ({
   id: i,
-  left: `${(i * 4.3 + 1.7) % 100}%`,
-  top: `${(i * 7.1 + 3.3) % 100}%`,
+  left: `${(i * 5.5 + 2.3) % 100}%`,
+  top:  `${(i * 7.1 + 3.3) % 100}%`,
   size: (i % 3) + 2,
-  duration: `${8 + (i % 7)}s`,
-  delay: `${(i * 0.8) % 10}s`,
+  duration: `${9 + (i % 7)}s`,
+  delay: `${(i * 0.9) % 10}s`,
+  color: i % 3 === 0 ? '#c8a96e' : i % 3 === 1 ? '#e8a0b4' : '#7ab87a',
 }))
 
 export default function FloatingSparkles() {
@@ -20,8 +21,8 @@ export default function FloatingSparkles() {
             width: s.size,
             height: s.size,
             borderRadius: '50%',
-            background: '#c8a96e',
-            boxShadow: `0 0 ${s.size * 2}px #c8a96e`,
+            background: s.color,
+            boxShadow: `0 0 ${s.size * 2}px ${s.color}`,
             animation: `sparkleFloat ${s.duration} ${s.delay} infinite ease-in-out`,
           }}
         />

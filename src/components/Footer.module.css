@@ -3,7 +3,8 @@
   z-index: 2;
   padding: 3rem 2rem;
   text-align: center;
-  border-top: 1px solid rgba(200, 169, 110, 0.12);
+  border-top: 1px solid rgba(184, 134, 42, 0.15);
+  background: rgba(106, 158, 106, 0.04);
 }
 
 .inner {
@@ -16,13 +17,13 @@
 .names {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 .divider {
   width: 36px;
   height: 1px;
-  background: var(--gold);
+  background: var(--pink-deep);
   opacity: 0.45;
 }
 
