@@ -64,10 +64,11 @@ story:
 # ------------------------------------------------------------
 events:
   # Small label above the gold line
-  label: "✦   Save the Dates.  ✦"
+  label: "✦   Save the Date.  ✦"
 
-  # Main heading
+  # Main heading — plural used when guest is invited to both events
   title: "The Celebrations"
+  title_single: "The Celebration"
 
   # Intro paragraph shown only when a guest is invited to BOTH events
   both_intro: >
@@ -86,7 +87,7 @@ events:
     date:
       icon: "📅"
       strong: "Saturday, 15th August 2026"
-      text: " · 11.00am - 3.00pm"
+      text: " · 11.00am - 2.30pm"
 
     location:
       icon: "📍"
@@ -97,8 +98,8 @@ events:
 
     dress_code:
       icon: "👗"
-      strong: "Traditional or Formal Attire"
-      text: " — Dress to impress in your finest Indian wear or Western formals"
+      strong: "Garden Party Elegance"
+      text: " — Traditional Indian attire or Western formal wear welcome. Think bright, elegant and summer-inspired."
 
   # ── Event 2 ──────────────────────────────────────────────
   event2:
@@ -121,8 +122,8 @@ events:
 
     dress_code:
       icon: "👗"
-      strong: "Smart Casual"
-      text: " — Think summer dresses, shirts, and your best cocktail vibes"
+      strong: "Rooftop Chic"
+      text: " — Dress to impress. Smart casual to formal attire welcome — think summer suits, shirts, cocktail dresses, or rooftop-ready evening wear."
 
 
 # ------------------------------------------------------------
@@ -153,10 +154,13 @@ rsvp:
     note: "Just a few details so we can make sure everything is perfect for you."
 
     # Question for Sagai headcount  — "{max}" is replaced with the guest's max party size
-    question_sagai_count: "How many from your party will be attending the Sagai?"
+    question_sagai_count: "How many from your party will be attending the Sagai and Lunch?"
 
     # Question for Evening headcount
     question_evening_count: "How many from your party will be attending the Evening?"
+
+    # Generic headcount question used when a guest is only invited to one event
+    question_celebration_count: "How many from your party will be attending the Sagai and Lunch?"
 
     # Dietary requirements question (shown for Sagai guests)
     question_dietary: "Any dietary requirements?"
@@ -188,8 +192,8 @@ rsvp:
   # Display names used in the decline-confirm bullet list
   # Keyed by inviteType value in guestCodes.js
   event_display_names:
-    event_1: ["the Sagai and Lunch"]
-    event_2: ["the Evening Celebration"]
+    event_1: ["the celebration"]
+    event_2: ["the celebration"]
     both:    ["the Sagai and Lunch", "the Evening Celebration"]
 
 

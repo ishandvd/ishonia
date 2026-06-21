@@ -52,7 +52,7 @@ export default function Events() {
         <div className="reveal" ref={headRef}>
           <span className={styles.label}>{ce.label}</span>
           <div className={styles.goldLine} />
-          <h2 className={styles.title}>{ce.title}</h2>
+          <h2 className={styles.title}>{both ? ce.title : ce.title_single}</h2>
           {both && (
             <p className={styles.intro}>{ce.both_intro}</p>
           )}

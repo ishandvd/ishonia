@@ -17,6 +17,14 @@ export default function App() {
   const [muted, setMuted] = useState(false)
   const audioRef = useRef(null)
 
+  useEffect(() => {
+    const name = guest?.full_name?.split(/[,&]/)[0].trim() ?? 'friend'
+    const msg = () => console.log(`🌸 get out of the console tab, pls dont hack this site ${name} 🌸`)
+    msg()
+    const id = setInterval(msg, 10000)
+    return () => clearInterval(id)
+  }, [guest])
+
 
   function handleEnter() {
     setEntered(true)

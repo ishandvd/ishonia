@@ -15,8 +15,9 @@
 
 .image {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  align-self: start;
   border: 1px solid rgba(184, 134, 42, 0.2);
   box-shadow: 0 8px 40px rgba(0,0,0,0.08);
 }

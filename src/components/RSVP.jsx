@@ -180,7 +180,7 @@ export default function RSVP() {
             {showSagai && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  {c.form.question_sagai_count}
+                  {guest.inviteType === 'both' ? c.form.question_sagai_count : c.form.question_celebration_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
@@ -194,7 +194,7 @@ export default function RSVP() {
             {showEvening && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  {c.form.question_evening_count}
+                  {guest.inviteType === 'both' ? c.form.question_evening_count : c.form.question_celebration_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
