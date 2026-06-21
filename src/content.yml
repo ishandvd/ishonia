@@ -183,7 +183,7 @@ rsvp:
 
   # ── Shared ────────────────────────────────────────────────
   # Deadline line shown on the initial and form steps
-  deadline: "Kindly respond by 1st July 2026"
+  deadline: "Kindly respond by 5th July 2026"
 
   # Display names used in the decline-confirm bullet list
   # Keyed by inviteType value in guestCodes.js

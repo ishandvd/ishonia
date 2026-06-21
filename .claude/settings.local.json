@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(git rm *)",
-      "WebFetch(domain:ishan-and-sonia.netlify.app)"
+      "WebFetch(domain:ishan-and-sonia.netlify.app)",
+      "Bash(git fetch *)",
+      "Bash(git reset *)",
+      "Bash(Copy-Item \"C:\\\\Temp\\\\guestCodes_backup.js\" \"C:\\\\Engagement\\\\app\\\\src\\\\guestCodes.js\" -Force)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

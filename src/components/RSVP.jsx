@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import useGuest from './useGuest'
 import styles from './RSVP.module.css'
 import content from '../content.yml'
@@ -70,6 +70,12 @@ export default function RSVP() {
     anything_else: '',
   })
 
+  useEffect(() => {
+    if (ready && guest && localStorage.getItem(`rsvp_submitted_${guest.code}`)) {
+      setStep('success')
+    }
+  }, [ready, guest])
+
   if (!ready || !guest) return null
 
   const events = EVENT_NAMES[guest.inviteType] ?? []
@@ -102,6 +108,7 @@ export default function RSVP() {
       is_drinking_alcohol: 0,
       anything_else: '',
     })
+    if (ok) localStorage.setItem(`rsvp_submitted_${guest.code}`, '1')
     setStep(ok ? 'success' : 'error')
   }
 
@@ -114,6 +121,7 @@ export default function RSVP() {
       full_name: guest.full_name,
       ...fields,
     })
+    if (ok) localStorage.setItem(`rsvp_submitted_${guest.code}`, '1')
     setStep(ok ? 'success' : 'error')
   }
 

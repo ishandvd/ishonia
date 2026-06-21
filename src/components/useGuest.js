@@ -6,7 +6,7 @@ export default function useGuest() {
   const [ready, setReady] = useState(false)
   useEffect(() => {
     const code = new URLSearchParams(window.location.search).get('code')
-    if (code && GUEST_CODES[code]) setGuest(GUEST_CODES[code])
+    if (code && GUEST_CODES[code]) setGuest({ ...GUEST_CODES[code], code })
     setReady(true)
   }, [])
   return { guest, ready }
