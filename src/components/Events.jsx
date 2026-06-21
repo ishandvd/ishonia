@@ -7,7 +7,7 @@ import VenueMap from './VenueMap'
 const ce = content.events
 
 function detailRows(ev) {
-  return [ev.date, ev.location, ev.dress_code]
+  return [ev.date, ev.time, ev.location, ev.dress_code]
 }
 
 function EventCard({ eventKey, delay }) {

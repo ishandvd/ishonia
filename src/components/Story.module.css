@@ -71,6 +71,8 @@
     gap: 2.5rem;
   }
   .image {
-    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
   }
 }

@@ -79,9 +79,11 @@ export const GUEST_CODES = {
   'sv5p7m': { inviteType: 'event_2', maxGuests: 1, full_name: 'Saavan Shah',                                             invited_by: 'Ishan', phone_number: '', email: '' },
 
   // --- Test guests ---
-  'test01': { inviteType: 'both',    maxGuests: 1, full_name: 'Test Solo Both',    invited_by: 'Ishan', phone_number: '', email: '' },
-  'test02': { inviteType: 'both',    maxGuests: 5, full_name: 'Test Large Both',   invited_by: 'Ishan', phone_number: '', email: '' },
-  'test03': { inviteType: 'event_1', maxGuests: 2, full_name: 'Test Indian Only',  invited_by: 'Ishan', phone_number: '', email: '' },
-  'test04': { inviteType: 'event_2', maxGuests: 3, full_name: 'Test Western Only', invited_by: 'Ishan', phone_number: '', email: '' },
-  'test05': { inviteType: 'event_1', maxGuests: 1, full_name: 'Test Solo Indian',  invited_by: 'Ishan', phone_number: '', email: '' },
+  'test01': { inviteType: 'both',    maxGuests: 1, full_name: 'Test Solo Both',                                          invited_by: 'Ishan', phone_number: '', email: '' },
+  'test02': { inviteType: 'both',    maxGuests: 5, full_name: 'Test Large Both',                                         invited_by: 'Ishan', phone_number: '', email: '' },
+  'test03': { inviteType: 'event_1', maxGuests: 2, full_name: 'Test Indian Only',                                        invited_by: 'Ishan', phone_number: '', email: '' },
+  'test04': { inviteType: 'event_2', maxGuests: 3, full_name: 'Test Western Only',                                       invited_by: 'Ishan', phone_number: '', email: '' },
+  'test05': { inviteType: 'event_1', maxGuests: 1, full_name: 'Test Solo Indian',                                        invited_by: 'Ishan', phone_number: '', email: '' },
+  'test06': { inviteType: 'event_2', maxGuests: 1, full_name: 'Test Solo Evening',                                       invited_by: 'Ishan', phone_number: '', email: '' },
+  'test07': { inviteType: 'both',    maxGuests: 2, full_name: 'Test Longname, Secundus Verylongname & Tertius McTest',   invited_by: 'Ishan', phone_number: '', email: '' },
 }

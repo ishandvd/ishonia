@@ -81,13 +81,18 @@ events:
     number: "Day"
 
     # Card heading
-    name: "Indian Sagai and Lunch"
+    name: "Sagai and Lunch"
 
     # Detail rows — each has an emoji icon, bold text, and regular text
     date:
       icon: "📅"
       strong: "Saturday, 15th August 2026"
-      text: " · 11.00am - 2.30pm"
+      text: " · Traditional Celebration & Lunch"
+
+    time:
+      icon: "🕚"
+      strong: "11:00am – 2:30pm"
+      text: ""
 
     location:
       icon: "📍"
@@ -104,13 +109,18 @@ events:
   # ── Event 2 ──────────────────────────────────────────────
   event2:
     number: "Evening"
-    name: "Evening Engagement Drinks Party"
+    name: "Engagement Drinks Party"
 
     date:
       icon: "📅"
       strong: "Saturday, 15th August 2026"
-      text: " · Evening celebration 7.30pm - 2.00am"
+      text: " · Drinks reception & Cake cutting"
       tbc: false          # if true, a "TBC" badge is shown next to this row
+
+    time:
+      icon: "🕢"
+      strong: "7:30pm – 2:00am"
+      text: ""
 
     location:
       icon: "📍"
@@ -157,7 +167,7 @@ rsvp:
     question_sagai_count: "How many from your party will be attending the Sagai and Lunch?"
 
     # Question for Evening headcount
-    question_evening_count: "How many from your party will be attending the Evening?"
+    question_evening_count: "How many from your party will be attending the Evening Drinks Reception?"
 
     # Generic headcount question used when a guest is only invited to one event
     question_celebration_count: "How many from your party will be attending the Sagai and Lunch?"
@@ -167,7 +177,7 @@ rsvp:
     dietary_placeholder: "e.g. vegetarian, gluten-free, none"
 
     # Alcohol question (shown for Evening guests)
-    question_alcohol: "How many in your party will be drinking alcohol at the evening event?"
+    question_alcohol: "How many in your party will be drinking alcohol at the Evening Drinks Reception?"
 
     # Free-text field at the end
     question_other: "Anything else you'd like us to know?"
@@ -194,7 +204,7 @@ rsvp:
   event_display_names:
     event_1: ["the celebration"]
     event_2: ["the celebration"]
-    both:    ["the Sagai and Lunch", "the Evening Celebration"]
+    both:    ["the Sagai and Lunch", "the Evening Drinks Reception"]
 
 
 # ------------------------------------------------------------
