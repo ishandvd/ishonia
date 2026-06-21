@@ -104,7 +104,7 @@ events:
     dress_code:
       icon: "👗"
       strong: "Garden Party Elegance"
-      text: " — Traditional Indian attire or Western formal wear welcome. Think bright, elegant and summer-inspired."
+      text: " · Traditional Indian attire or Western formal wear welcome. Think bright, elegant and summer-inspired."
 
   # ── Event 2 ──────────────────────────────────────────────
   event2:
@@ -133,7 +133,7 @@ events:
     dress_code:
       icon: "👗"
       strong: "Rooftop Chic"
-      text: " — Dress to impress. Smart casual to formal attire welcome — think summer suits, shirts, cocktail dresses, or rooftop-ready evening wear."
+      text: " · Dress to impress. Smart casual to formal attire welcome — think summer suits, shirts, cocktail dresses, or rooftop-ready evening wear."
 
 
 # ------------------------------------------------------------
@@ -169,8 +169,8 @@ rsvp:
     # Question for Evening headcount
     question_evening_count: "How many from your party will be attending the Evening Drinks Reception?"
 
-    # Generic headcount question used when a guest is only invited to one event
-    question_celebration_count: "How many from your party will be attending the Sagai and Lunch?"
+    # Generic headcount question — no longer used (kept for safety)
+    question_celebration_count: "How many from your party will be attending?"
 
     # Dietary requirements question (shown for Sagai guests)
     question_dietary: "Any dietary requirements?"
@@ -202,8 +202,8 @@ rsvp:
   # Display names used in the decline-confirm bullet list
   # Keyed by inviteType value in guestCodes.js
   event_display_names:
-    event_1: ["the celebration"]
-    event_2: ["the celebration"]
+    event_1: ["the Sagai and Lunch"]
+    event_2: ["the Evening Drinks Reception"]
     both:    ["the Sagai and Lunch", "the Evening Drinks Reception"]
 
 

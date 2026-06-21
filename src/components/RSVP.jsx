@@ -62,6 +62,8 @@ export default function RSVP() {
 
   // 'initial' | 'no_confirm' | 'form' | 'submitting' | 'success' | 'error'
   const [step, setStep] = useState('initial')
+  const [zeroError, setZeroError] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
   const [fields, setFields] = useState({
     coming_to_sagai: 0,
     coming_to_evening: 0,
@@ -114,6 +116,17 @@ export default function RSVP() {
 
   async function handleFormSubmit(e) {
     e.preventDefault()
+    const totalAttending = (showSagai ? fields.coming_to_sagai : 0) + (showEvening ? fields.coming_to_evening : 0)
+    if (totalAttending === 0) {
+      setZeroError(true)
+      return
+    }
+    setZeroError(false)
+    setShowConfirm(true)
+  }
+
+  async function handleConfirmedSubmit() {
+    setShowConfirm(false)
     setStep('submitting')
     const ok = await submitToNetlify({
       invite_type: guest.inviteType,
@@ -168,7 +181,7 @@ export default function RSVP() {
     )
   }
 
-  if (step === 'form') {
+  if (step === 'form' || step === 'error') {
     return (
       <section id="rsvp" className={styles.rsvp}>
         <div className={styles.inner} ref={ref}>
@@ -180,7 +193,7 @@ export default function RSVP() {
             {showSagai && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  {guest.inviteType === 'both' ? c.form.question_sagai_count : c.form.question_celebration_count}
+                  {c.form.question_sagai_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
@@ -194,7 +207,7 @@ export default function RSVP() {
             {showEvening && (
               <div className={styles.field}>
                 <p className={styles.question}>
-                  {guest.inviteType === 'both' ? c.form.question_evening_count : c.form.question_celebration_count}
+                  {c.form.question_evening_count}
                   <span className={styles.maxNote}> (max {guest.maxGuests})</span>
                 </p>
                 <Stepper
@@ -243,6 +256,16 @@ export default function RSVP() {
               />
             </div>
 
+            {zeroError && (
+              <p className={styles.errorMsg}>
+                Please let us know how many guests will be attending — or{' '}
+                <button type="button" className={styles.errorLink} onClick={() => { setZeroError(false); setStep('initial') }}>
+                  go back
+                </button>{' '}
+                if your plans have changed.
+              </p>
+            )}
+
             {step === 'error' && (
               <p className={styles.errorMsg}>{c.form.error}</p>
             )}
@@ -250,10 +273,66 @@ export default function RSVP() {
             <button type="submit" className={styles.btn} disabled={step === 'submitting'}>
               {step === 'submitting' ? c.form.btn_submitting : c.form.btn_submit}
             </button>
+
+            <button type="button" className={styles.btnGhost} onClick={() => { setZeroError(false); setStep('initial') }}>
+              Go back
+            </button>
           </form>
 
           <p className={styles.deadline}>{c.deadline}</p>
         </div>
+
+        {showConfirm && (
+          <div className={styles.modalOverlay} onClick={() => setShowConfirm(false)}>
+            <div className={styles.modal} onClick={e => e.stopPropagation()}>
+              <p className={styles.modalTitle}>Just to confirm</p>
+              <div className={styles.modalRows}>
+                <div className={styles.modalRow}>
+                  <span className={styles.modalLabel}>Name</span>
+                  <span className={styles.modalValue}>{guest.full_name}</span>
+                </div>
+                {showSagai && (
+                  <div className={styles.modalRow}>
+                    <span className={styles.modalLabel}>Sagai & Lunch</span>
+                    <span className={styles.modalValue}>{fields.coming_to_sagai} guest{fields.coming_to_sagai !== 1 ? 's' : ''}</span>
+                  </div>
+                )}
+                {showEvening && (
+                  <div className={styles.modalRow}>
+                    <span className={styles.modalLabel}>Evening Drinks</span>
+                    <span className={styles.modalValue}>{fields.coming_to_evening} guest{fields.coming_to_evening !== 1 ? 's' : ''}</span>
+                  </div>
+                )}
+                {showSagai && (
+                  <div className={styles.modalRow}>
+                    <span className={styles.modalLabel}>Dietary</span>
+                    <span className={styles.modalValue}>{fields.dietary_restrictions || 'None'}</span>
+                  </div>
+                )}
+                {showEvening && (
+                  <div className={styles.modalRow}>
+                    <span className={styles.modalLabel}>Drinking alcohol</span>
+                    <span className={styles.modalValue}>{fields.is_drinking_alcohol} guest{fields.is_drinking_alcohol !== 1 ? 's' : ''}</span>
+                  </div>
+                )}
+                {fields.anything_else && (
+                  <div className={styles.modalRow}>
+                    <span className={styles.modalLabel}>Note</span>
+                    <span className={styles.modalValue}>{fields.anything_else}</span>
+                  </div>
+                )}
+              </div>
+              <div className={styles.modalBtns}>
+                <button className={styles.btn} onClick={handleConfirmedSubmit}>
+                  {c.form.btn_submit}
+                </button>
+                <button className={styles.btnGhost} onClick={() => setShowConfirm(false)}>
+                  Edit
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     )
   }
